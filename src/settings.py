@@ -27,7 +27,7 @@ APPLICATIONS: List[Union[Industry, Domain, Research]] = [
 ]
 CATEGORY: Category = Category.Robotics(extra=Category.Safety())
 
-CV_TASKS: List[CVTask] = [CVTask.ObjectDetection]
+CV_TASKS: List[CVTask] = [CVTask.ObjectDetection(), CVTask.Identification()]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.ObjectDetection()]
 
 RELEASE_DATE: Optional[str] = "2020-12-13"  # e.g. "YYYY-MM-DD"

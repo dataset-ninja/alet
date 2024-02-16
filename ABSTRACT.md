@@ -39,6 +39,5 @@ For annotating the tools in the downloaded and the photographed images, we used 
 
 ## Dataset statistics
 
-The METU-ALET dataset includes 22,835 bounding boxes (BBs). As displayed in Fig.3, for each tool category, there are more than 200 BBs, which is on an order similar to the widely used object detection datasets such as PASCAL [24]. As shown in Table II, METUALET includes tools that appear small (area < 322 ), medium
-(322 < area < 962 ) and large (962 < area) – following the naming convention from MS-COCO.
+The dataset includes 22,835 bounding boxes (BBs). For each tool category, there are more than 200 BBs, which is on an order similar to the widely used object detection datasets such as [PASCAL](http://host.robots.ox.ac.uk/pascal/VOC/). As shown in Table II, METUALET includes tools that appear small (area < 322), medium (322 < area < 962 ) and large (962 < area) – following the naming convention from [MS-COCO](https://cocodataset.org/).
 
