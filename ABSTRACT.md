@@ -35,9 +35,29 @@ For each scene to be generated, the following steps were followed:
 **Camera Configuration:** The camera's position in each dimension (x, y, z) was determined by random sampling from a uniform distribution ranging from -3 to 3. The camera's viewing direction was oriented towards the center of the top surface of the table.
 **Tool Placement:** For each scene, the authors randomly spawned a variable number of tools, N, ranging from 5 to 20, chosen randomly from a pool of 49 options. These tools were dropped onto the table from positions [x, y, z] randomly selected from a uniform distribution ranging from 0 to 1 above the table surface. The initial orientation of each tool, along each dimension, was sampled uniformly from 0 to 360 degrees.
 
-For annotating the tools in the downloaded and the photographed images, we used the [VGG Image Annotation (VIA) tool](https://solutions.innodata.com/).
+For annotating the tools in the downloaded and the photographed images, the authors used the [VGG Image Annotation (VIA) tool](https://solutions.innodata.com/).
 
 ## Dataset statistics
 
 The dataset includes 22,835 bounding boxes (BBs). For each tool category, there are more than 200 BBs, which is on an order similar to the widely used object detection datasets such as [PASCAL](http://host.robots.ox.ac.uk/pascal/VOC/). As shown in Table II, METUALET includes tools that appear small (area < 322), medium (322 < area < 962 ) and large (962 < area) – following the naming convention from [MS-COCO](https://cocodataset.org/).
+
+| Subset       | Small BBs | Medium BBs | Large BBs | Total |
+|--------------|-----------|------------|-----------|-------|
+| Downloaded   | 809       | 4650       | 5661      | 11114 |
+| Photographed | 13        | 309        | 443       | 765   |
+| Synthesized  | 813       | 6934       | 3209      | 10956 |
+| Total        | 1629      | 11893      | 9313      | 22835 |
+
+<span style="font-size: smaller; font-style: italic;">The sizes of the bounding boxes (BB) of the annotated tools in the dataset.</span>
+
+The dataset is composed of 2699 images in total, and on average, has size 1138 × 903. Although the number of images may appear low, the number of bounding boxes (22835) is sufficient since there are more than 200 BBs per tools, and the avg. number of BBs per image is rather large (6.6).
+
+| Subset       | Cardinality | Avg. Resolution |
+|--------------|-------------|-----------------|
+| Downloaded   | 1870        | 924 × 786       |
+| Photographed | 89          | 3663 × 3310     |
+| Synthesized  | 740         | 1374 × 917      |
+| Total/Avg    | 2699        | 1138 × 903      |
+
+<span style="font-size: smaller; font-style: italic;">The cardinality and the resolution of the images in the dataset.</span>
 
