@@ -22,11 +22,10 @@ HIDE_DATASET = True  # set False when 100% sure about repo quality
 ##################################
 LICENSE: License = License.PubliclyAvailable()
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
-    Industry.Manufacturing(),
     Industry.Robotics(),
     Industry.Safety(),
 ]
-CATEGORY: Category = Category.Manufacturing(extra=[Category.Robotics(), Category.Safety()])
+CATEGORY: Category = Category.Robotics(extra=Category.Safety())
 
 CV_TASKS: List[CVTask] = [CVTask.ObjectDetection, CVTask.Identification()]
 ANNOTATION_TYPES: List[AnnotationType] = [AnnotationType.ObjectDetection()]

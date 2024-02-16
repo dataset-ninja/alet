@@ -30,7 +30,14 @@ The dataset comprises three distinct sets of images:
 
 <span style="font-size: smaller; font-style: italic;">Some examples from the Synthetic Images.</span>
 
+For each scene to be generated, the following steps were followed:
+**Scene Setup:** The authors constructed an environment resembling a room, featuring four walls and 10 assorted objects like chairs, sofas, corner pieces, and televisions placed in fixed positions. At the room's center, they introduced one of six different tables selected randomly from a range of 1 to 6. To enhance variability, they also scattered unrelated objects like mugs and bottles randomly throughout the scene.
+**Camera Configuration:** The camera's position in each dimension (x, y, z) was determined by random sampling from a uniform distribution ranging from -3 to 3. The camera's viewing direction was oriented towards the center of the top surface of the table.
+**Tool Placement:** For each scene, the authors randomly spawned a variable number of tools, N, ranging from 5 to 20, chosen randomly from a pool of 49 options. These tools were dropped onto the table from positions [x, y, z] randomly selected from a uniform distribution ranging from 0 to 1 above the table surface. The initial orientation of each tool, along each dimension, was sampled uniformly from 0 to 360 degrees.
 
+For annotating the tools in the downloaded and the photographed images, we used the [VGG Image Annotation (VIA) tool](https://solutions.innodata.com/).
+
+## Dataset statistics
 
 
 
