@@ -92,6 +92,17 @@ def convert_and_upload_supervisely_project(
         img_height = image_name_to_shape[image_name][0]
         img_wight = image_name_to_shape[image_name][1]
 
+        if image_name[:5] == "Image":
+            source = sly.Tag(synthetic_meta)
+        elif "flickr" in image_name.split("_"):
+            source = sly.Tag(flickr_meta)
+        elif "pixabay" in image_name.split("_"):
+            source = sly.Tag(pixabay_meta)
+        elif "wikimgs" in image_name.split("_"):
+            source = sly.Tag(wikimgs_meta)
+        else:
+            source = sly.Tag(other_meta)
+
         # image_np = sly.imaging.image.read(image_path)[:, :, 0]
         # img_height = image_np.shape[0]
         # img_wight = image_np.shape[1]
@@ -110,14 +121,22 @@ def convert_and_upload_supervisely_project(
             label_rectangle = sly.Label(rectangle, obj_class)
             labels.append(label_rectangle)
 
-        return sly.Annotation(img_size=(img_height, img_wight), labels=labels)
+        return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=[source])
 
     project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
 
     obj_classes_names = []
     category_id_to_classes = {}
 
-    meta = sly.ProjectMeta()
+    flickr_meta = sly.TagMeta("flickr", sly.TagValueType.NONE)
+    synthetic_meta = sly.TagMeta("synthetic", sly.TagValueType.NONE)
+    pixabay_meta = sly.TagMeta("pixabay", sly.TagValueType.NONE)
+    wikimgs_meta = sly.TagMeta("wikimgs", sly.TagValueType.NONE)
+    other_meta = sly.TagMeta("other", sly.TagValueType.NONE)
+
+    meta = sly.ProjectMeta(
+        tag_metas=[flickr_meta, synthetic_meta, pixabay_meta, wikimgs_meta, other_meta]
+    )
 
     for ds_name, ann_path in ds_name_to_anns.items():
 

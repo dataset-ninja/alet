@@ -13,14 +13,16 @@ from dataset_tools.templates import (
 ##################################
 # * Before uploading to instance #
 ##################################
-PROJECT_NAME: str = "ALET"
-PROJECT_NAME_FULL: str = "ALET: Automated Labeling of Equipment and Tools Dataset"
+PROJECT_NAME: str = "METU-ALET"
+PROJECT_NAME_FULL: str = "METU-ALET: A Dataset for Tool Detection in the Wild"
 HIDE_DATASET = True  # set False when 100% sure about repo quality
 
 ##################################
 # * After uploading to instance ##
 ##################################
-LICENSE: License = License.PubliclyAvailable()
+LICENSE: License = License.Custom(
+    source_url="https://github.com/metu-kovan/METU-ALET?tab=readme-ov-file#copyright"
+)
 APPLICATIONS: List[Union[Industry, Domain, Research]] = [
     Industry.Robotics(),
     Industry.Safety(),
@@ -81,7 +83,9 @@ ORGANIZATION_NAME: Optional[Union[str, List[str]]] = "Middle East Technical Univ
 ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.metu.edu.tr/"
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
-SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = None
+SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
+    "sources": ["flickr", "synthetic", "pixabay", "wikimgs", "other"]
+}
 TAGS: Optional[List[str]] = None
 
 
