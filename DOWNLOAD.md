@@ -1,6 +1,6 @@
 Dataset **METU-ALET** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](Set 'HIDE_DATASET=False' to generate download link)
+ [Download](https://assets.supervisely.com/supervisely-supervisely-assets-public/teams_storage/P/7/uS/v8tXfM2iDo1Zk7ud3FGuLdUkP5DSgxeAmMFyaLMu5N0oZw4q01iAYeUsAXh97Hu8EwEmw7dtlVrGZzo8bPGHjpXGpCMH6ZZrWGH3vhzKDhhg30Jh4AtORAgLDuCg.tar)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
