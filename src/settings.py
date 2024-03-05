@@ -86,7 +86,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "https://www.metu.edu.tr/"
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
     "sources": ["flickr", "synthetic", "pixabay", "wikimgs", "other"]
 }
-TAGS: Optional[List[str]] = None
+TAGS: Optional[List[str]] = ['multi-view']
 
 
 SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None
